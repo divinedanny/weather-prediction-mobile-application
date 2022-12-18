@@ -170,7 +170,7 @@ class _DetailPageState extends State<DetailPage> {
                                           .toString() +
                                       "°",
                                   style: TextStyle(
-                                    fontSize: 80,
+                                    fontSize: 60,
                                     fontWeight: FontWeight.bold,
                                     foreground: Paint()
                                       ..shader = _constants.shader,
@@ -186,6 +186,7 @@ class _DetailPageState extends State<DetailPage> {
                               height: 400,
                               width: size.width * .9,
                               child: ListView(
+                                scrollDirection: Axis.vertical,
                                 physics: const BouncingScrollPhysics(),
                                 children: [
                                   Card(
@@ -213,47 +214,15 @@ class _DetailPageState extends State<DetailPage> {
                                               ),
                                               Row(
                                                 children: [
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                        "${getForecastWeather(0)["minTemperature"]}°",
-                                                        style: TextStyle(
-                                                          color: _constants
-                                                              .greyColor,
-                                                          fontSize: 30,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                        '-',
-                                                        style: TextStyle(
-                                                            color: _constants
-                                                                .secondaryColor,
-                                                            fontSize: 30,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontFeatures: const [
-                                                              FontFeature
-                                                                  .enable(
-                                                                      'sups'),
-                                                            ]),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                        "${getForecastWeather(0)["maxTemperature"]}°",
-                                                        style: TextStyle(
-                                                          color: _constants
-                                                              .blackColor,
-                                                          fontSize: 30,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ],
+                                                  Text(
+                                                    "${getForecastWeather(0)["maxTemperature"]}°",
+                                                    style: TextStyle(
+                                                      color:
+                                                          _constants.blackColor,
+                                                      fontSize: 30,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -341,47 +310,15 @@ class _DetailPageState extends State<DetailPage> {
                                               ),
                                               Row(
                                                 children: [
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                        "${getForecastWeather(1)["minTemperature"]}°",
-                                                        style: TextStyle(
-                                                          color: _constants
-                                                              .greyColor,
-                                                          fontSize: 30,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                      Text(
-                                                        '-',
-                                                        style: TextStyle(
-                                                            color: _constants
-                                                                .secondaryColor,
-                                                            fontSize: 30,
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontFeatures: const [
-                                                              FontFeature
-                                                                  .enable(
-                                                                      'sups'),
-                                                            ]),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                        "${getForecastWeather(1)["maxTemperature"]}°",
-                                                        style: TextStyle(
-                                                          color: _constants
-                                                              .blackColor,
-                                                          fontSize: 30,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ],
+                                                  Text(
+                                                    "${getForecastWeather(1)["maxTemperature"]}°",
+                                                    style: TextStyle(
+                                                      color:
+                                                          _constants.blackColor,
+                                                      fontSize: 30,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -402,7 +339,7 @@ class _DetailPageState extends State<DetailPage> {
                                                     // ignore: prefer_interpolation_to_compose_strings
                                                     'assets/images/' +
                                                         getForecastWeather(
-                                                            1)["weatherIcon"],
+                                                            0)["weatherIcon"],
                                                     width: 30,
                                                   ),
                                                   const SizedBox(
@@ -469,54 +406,19 @@ class _DetailPageState extends State<DetailPage> {
                                               ),
                                               Row(
                                                 children: [
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                        // ignore: prefer_interpolation_to_compose_strings
-                                                        getForecastWeather(2)[
-                                                                    "minTemperature"]
-                                                                .toString() +
-                                                            "°",
-                                                        style: TextStyle(
-                                                          color: _constants
-                                                              .greyColor,
-                                                          fontSize: 30,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
                                                   Text(
-                                                    '-',
+                                                    // ignore: prefer_interpolation_to_compose_strings
+                                                    getForecastWeather(2)[
+                                                                "maxTemperature"]
+                                                            .toString() +
+                                                        "°",
                                                     style: TextStyle(
-                                                        color: _constants
-                                                            .secondaryColor,
-                                                        fontSize: 30,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        fontFeatures: const [
-                                                          FontFeature.enable(
-                                                              'sups'),
-                                                        ]),
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Text(
-                                                        // ignore: prefer_interpolation_to_compose_strings
-                                                        getForecastWeather(2)[
-                                                                    "maxTemperature"]
-                                                                .toString() +
-                                                            "°",
-                                                        style: TextStyle(
-                                                          color: _constants
-                                                              .blackColor,
-                                                          fontSize: 30,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                    ],
+                                                      color:
+                                                          _constants.blackColor,
+                                                      fontSize: 30,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
                                                   ),
                                                 ],
                                               ),
