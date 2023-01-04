@@ -35,7 +35,7 @@ class _MicrophoneState extends State<Microphone> {
 
   void saveAudio() async {
     var tempDir = await getTemporaryDirectory();
-    var path = '${tempDir.path}/flutter_sound.aac';
+    var path = '${tempDir.path}/flutter_sound.wav';
     if (!isRecorderInit) {
       return;
     }
